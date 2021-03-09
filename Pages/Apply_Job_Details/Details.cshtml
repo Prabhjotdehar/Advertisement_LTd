@@ -1,0 +1,43 @@
+﻿@page
+@model Advertisement_LTd.Pages.Apply_Job_Details.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Apply_Job_Detail</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Apply_Job_Detail.Candidate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Apply_Job_Detail.Candidate.Mobile_no_of_candidate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Apply_Job_Detail.Job_Detail)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Apply_Job_Detail.Job_Detail.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Apply_Job_Detail.Candidate_availabilities)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Apply_Job_Detail.Candidate_availabilities)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Apply_Job_Detail.Candidate_notice_period)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Apply_Job_Detail.Candidate_notice_period)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Apply_Job_Detail.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

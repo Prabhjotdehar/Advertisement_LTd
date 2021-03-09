@@ -1,0 +1,54 @@
+﻿@page
+@model Advertisement_LTd.Pages.Apply_Job_Details.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Apply_Job_Detail[0].Candidate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apply_Job_Detail[0].Job_Detail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apply_Job_Detail[0].Candidate_availabilities)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apply_Job_Detail[0].Candidate_notice_period)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Apply_Job_Detail) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Candidate.Mobile_no_of_candidate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Job_Detail.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Candidate_availabilities)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Candidate_notice_period)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
